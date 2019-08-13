@@ -1,6 +1,8 @@
 # EnviroGenes
 Annotation of Gene Patterns in Complex Population Structures
 
+![image](img/flow.png)
+
 ## [Link to F1000 Draft](https://docs.google.com/document/d/1Kx3IpdaFGNcpuhF58xDJJXR-xysUkcLzllA0V0G5HVc/edit?usp=sharing)
 
 ## Getting Started
@@ -69,7 +71,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
@@ -86,4 +88,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
-
