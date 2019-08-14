@@ -6,17 +6,14 @@ from sklearn.svm import SVC
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_auc_score
 from sklearn.feature_selection import SelectFromModel
+#binarize the labels
+from sklearn.preprocessing import Binarizer
 
 humann2=pd.read_csv("/Users/kumardeep/Downloads/softwares/github/EnviroGenes_playground/sample11.csv",index_col=0)
 
 X = humann2[humann2.columns[13:]]
 y=humann2['flag']
 yy=y
-#binarize the labels
-from sklearn.preprocessing import Binarizer
-#y = y.ravel().reshape(-1,1)
-#transformer = Binarizer(threshold=250).fit(y)
-#yy=transformer.transform(y)
 ############Feature selection ############################3
 lsvc = LinearSVC(C=0.1, penalty="l1", dual=False).fit(X, yy.ravel())
 model = SelectFromModel(lsvc, prefit=True)
