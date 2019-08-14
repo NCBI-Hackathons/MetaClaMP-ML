@@ -14,11 +14,11 @@ To identify unique metabolic functions in gut metagenomes for disease states suc
 ```
 for i in `cat SRA.txt`; do fasterq-dump $i --skip-technical --split-3 --min-read-len 50 --outdir $i -e 36; done
 ```
-
 2. Join reads using Fastq-join (https://github.com/brwnj/fastq-join)
 ```
 for i in `cat SRA.txt`; do fastq-join ${i}/${i}_1.fastq ${i}/${i}_2.fastq -o ${i}/${i}_%.fastq; done
 ```
+![image](img/cropped-logo_red_300-1.png)
 3. Quality filter and convert FASTQ to FASTA using PRINSEQ++ (https://github.com/Adrian-Cantu/PRINSEQ-plus-plus)
 ```
 for i in ERR*/*join.fastq; do prinseq++ -fastq $i -min_qual_mean 20 -ns_max_n 0 -derep -trim_qual_right=20 -lc_entropy -min_len 50 -threads 36 -out_format 1 -out_name $i; done
