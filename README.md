@@ -27,6 +27,19 @@ cp */*.fastq_good_out.fasta clean_SRA/
 for i in `cat SRA.txt`; do mv ${i}_join.fastq_good_out.fasta ${i}; done
 ```
 
+5. From the directory with all your fasta files, run the script humann2_pre_proc.sh to create a swarm submit file with:
+```
+$bash human2_pre_proc.sh .
+```
+
+6. Submit the swarm file with:
+```
+swarm -f humann2_submission.swarm -g 10 -t 4 --module humann2
+```
+
+~your output will be each of the three Humann2 .tsv files in unique directories per input fasta. These are read into the ML algorithm.
+
+
 ## [Link to F1000 Draft](https://docs.google.com/document/d/1Kx3IpdaFGNcpuhF58xDJJXR-xysUkcLzllA0V0G5HVc/edit?usp=sharing)
 
 ## Getting Started
