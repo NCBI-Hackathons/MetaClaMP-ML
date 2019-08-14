@@ -1,8 +1,10 @@
 # MetaClaMP-ML
 # Metagenome Classification of Metabolic Profiles using Machine Learning
 
-![image](Framework.png)
+## AIM
+To identify unique metabolic functions in gut metagenomes for disease states such as Colorectal cancer, Diabetic, Obese, Parkinson's disease, and Ulcerative colitis populations.
 
+![image](Framework.png)
 
 
 
