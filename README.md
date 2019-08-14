@@ -1,6 +1,6 @@
 # MetaClaMP-ML
 # Metagenome Classification of Metabolic Profiles using Machine Learning
-![image](img/logo.png)
+![image](img/logo.png width="300")
 
 ## AIM
 To identify unique metabolic functions in gut metagenomes for disease states such as Colorectal cancer, Diabetic, Obese, Parkinson's disease, and Ulcerative colitis populations.
@@ -37,7 +37,7 @@ $bash human2_pre_proc.sh .
 
 6. Submit the swarm file with:
 ```
-$swarm -f humann2_submission.swarm -g 16 -t 12 --module humann2 --time 24:00:00
+$swarm -f humann2_submission.swarm -g 16 -t 12 --module humann2
 ```
 
 ~your output will be each of the three Humann2 .tsv files in unique directories per input fasta. These are read into the ML algorithm.
