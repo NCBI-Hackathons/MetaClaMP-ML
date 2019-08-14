@@ -1,5 +1,5 @@
-# EnviroGenes
-Annotation of Gene Patterns in Complex Population Structures
+# MetaClaMP-ML (Metagenome Classification of Metabolic Profiles using Machine Learning)
+Metagenome Classification of Metabolic Profiles using Machine Learning
 
 ![image](img/flow.png)
 
