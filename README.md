@@ -34,7 +34,7 @@ $bash human2_pre_proc.sh .
 
 6. Submit the swarm file with:
 ```
-swarm -f humann2_submission.swarm -g 10 -t 4 --module humann2
+$swarm -f humann2_submission.swarm -g 10 -t 4 --module humann2
 ```
 
 ~your output will be each of the three Humann2 .tsv files in unique directories per input fasta. These are read into the ML algorithm.
