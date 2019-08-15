@@ -85,3 +85,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
+<p align="center">
+ <img width="360" src="img/metaclamp.png" alt="nextflow_logo"/>
+</p>
