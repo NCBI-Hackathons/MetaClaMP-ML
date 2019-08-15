@@ -32,7 +32,7 @@ cp */*.fastq_good_out.fasta clean_SRA/
 for i in `cat SRA.txt`; do mv ${i}_join.fastq_good_out.fasta ${i}; done
 ```
 
-5. From the directory with all your fasta files, run the script humann2_pre_proc.sh to create a swarm submit file with:
+5. From the directory with all your fasta files, run the script [humann2_pre_proc.sh](human2_pre_proc.sh) to create a swarm submit file with:
 ```
 $ bash human2_pre_proc.sh .
 ```
