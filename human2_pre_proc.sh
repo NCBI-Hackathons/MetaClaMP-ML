@@ -2,7 +2,7 @@
 
 
 #create temp submit file 1
-ls *.fasta > temp_submission
+ls *.fasta *.fastq *.fa *.fq > temp_submission
 
 #create temp submit file2
 awk '{print "humann2 --input " $0 " --threads 56 --output humann_out_"$0}' temp_submission > temp_submission_2 #humann2_submission.swarm
