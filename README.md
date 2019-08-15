@@ -97,7 +97,10 @@ Future work may include:
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
 
-## Acknowledgments
+## References
+
+1. Cantu VA, Sadural J, Edwards R. PRINSEQ++, a multi-threaded tool for fast and efficient quality control and preprocessing of sequencing datasets. 2019. [doi:10.7287/peerj.preprints.27553v1](http://doi.org/10.7287/peerj.preprints.27553v1).
+2. Franzosa EA, McIver LJ, Rahnavard G, Thompson LR, Schirmer M, Weingart G, et al. Species-level functional profiling of metagenomes and metatranscriptomes. Nat Methods. 2018;15:962–8. [doi:10.1038/s41592-018-0176-y](doi.org/10.1038/s41592-018-0176-y).
 
 <p align="center">
  <img width="360" src="img/metaclamp.png" alt="nextflow_logo"/>
