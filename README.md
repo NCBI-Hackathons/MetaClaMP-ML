@@ -64,7 +64,12 @@ docker pull greenkidneybean/humann2
 This container will automatically download the Chocophlan (5 GB) and UniRef90 (11 GB) databases.  To run a given SRA accession through the container:
 
 ```
-docker run humann2 run.py --input sra://<your_SRA#> --ref-db /databases --output-folder <your_out_path>
+docker run humann2 run.py --input sra://<your_SRA#> --ref-db /databases
+```
+
+Additional options for the run script can be viewed by passing a "-h" flag:
+```
+docker run humann2 run.py -h
 ```
 
 ## Environments
