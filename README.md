@@ -37,12 +37,12 @@ for i in `cat SRA.txt`; do mv ${i}_join.fastq_good_out.fasta ${i}; done
 $ bash human2_pre_proc.sh .
 ```
 
-6. Submit the swarm file with:
+6. The above command will generate `humann2_submission.swarm`. Submit jobs using this swarm file using the command below. The parameters for memory use and thread-count can be modified appropriately for the cluster being used. 
 ```
 $ swarm -f humann2_submission.swarm -g 18 -t 56 --module humann2
 ```
 
-~your output will be each of the three Humann2 .tsv files in unique directories per input fasta. These are read into the ML algorithm.
+Your output will be each of the three Humann2 .tsv files in unique directories per input fasta. These are read into the ML algorithm.
 
 
 ## [Link to F1000 Draft](https://docs.google.com/document/d/1Kx3IpdaFGNcpuhF58xDJJXR-xysUkcLzllA0V0G5HVc/edit?usp=sharing)
