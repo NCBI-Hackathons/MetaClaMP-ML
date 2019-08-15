@@ -1,5 +1,5 @@
 # MetaClaMP-ML
-# Metagenome Classification of Metabolic Profiles using Machine Learning
+### Metagenome Classification of Metabolic Profiles using Machine Learning
 <p align="center">
  <img width="360" src="img/logo.png" alt="nextflow_logo"/>
 </p>
