@@ -44,7 +44,8 @@ Your output will be each of the three Humann2 .tsv files in unique directories p
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+SRAs can be run through our Docker container below
+`docker pull greenkidneybean/humann2`
 
 ### Prerequisites
 
