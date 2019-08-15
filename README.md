@@ -8,9 +8,7 @@
 To identify unique metabolic functions in gut metagenomes for disease states such as Colorectal cancer, Diabetic, Obese, Parkinson's disease, and Ulcerative colitis populations.
 
 ## WORKFLOW
-![image](img/workflow.png)
-
-
+![image](img/pipeline.tif)
 
 ## PIPELINE
 1. Retrieve SRA FASTQ files using NCBI SRA Toolkit (https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software)
@@ -37,7 +35,7 @@ for i in `cat SRA.txt`; do mv ${i}_join.fastq_good_out.fasta ${i}; done
 $ bash human2_pre_proc.sh .
 ```
 
-6. The above command will generate `humann2_submission.swarm`. Submit jobs using this swarm file using the command below. The parameters for memory use and thread-count can be modified appropriately for the cluster being used. 
+6. The above command will generate `humann2_submission.swarm`. Submit jobs using this swarm file using the command below. The parameters for memory use and thread-count can be modified appropriately for the cluster being used.
 ```
 $ swarm -f humann2_submission.swarm -g 32 -t 16 --module humann2
 ```
