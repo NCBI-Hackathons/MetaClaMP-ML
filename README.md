@@ -42,34 +42,33 @@ $ swarm -f humann2_submission.swarm -g 32 -t 16 --module humann2
 
 Your output will be each of the three Humann2 .tsv files in unique directories per input fasta. These are read into the ML algorithm.
 
-## Getting Started
+## Methods
+BioProjects within the Sequence Read Archive were selected for analysis based upon the presence of shotgun sequencing metagenomic samples from the gut microbiome and paired labels identifying the sample with a health status (Supplementary). Disease statuses encompass individuals diagnosed with colorectal cancer, diabetes, obesity, Parkinson’s disease, and ulcerative colitis. Metagenomic gut samples from healthy individuals were also selected. From these studies, 100 representative SRA accessions (Supplementary) were selected for an initial characterization to prototype the following workflow. SRA accessions were downloaded using Fasterq-Dump from [SRA Toolkit](http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software) version 2.9.6 , followed by a read quality filter using PRINSEQ++ version 1.2 [1].  All filtered reads contained paired ends, which were concatenated into a single read file using a custom script before being passed as input into HUMAnN2 version 2.8.1 using the UniRef90 full database to optimize the identification of uncharacterized proteins [2].  
 
-SRAs can be run through our Docker container below
-`docker pull greenkidneybean/humann2`
+![ml_metrics](img/humann2_methods.png)
 
-### Prerequisites
+Following the HUMAnN2 workflow, output files were normalized based on relative abundance followed by joining all sample tables to create a single table for gene families, path coverage, and path abundance. All three tables were mergedwpathcoverage, genefamilies, preprocessing custom script with R before going into SciKit-Learn
 
-What things you need to install the software and how to install them.
+## Results
+![ml_metrics](img/ml_metrics.png)
 
+![ml_metrics](img/ml_roc.png)
+
+## Docker
+
+SRAs can be run through our Docker
 ```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+docker pull greenkidneybean/humann2
 ```
 
-## Deployment
+This container will automatically download the Chocophlan (5 GB) and UniRef90 (11 GB) databases.  To run a given SRA accession through the container:
 
-Add additional notes about how to deploy this on a live system
+```
+docker run humann2 run.py --input sra://<your_SRA#> --ref-db /databases --output-folder <your_out_path>
+```
 
 ## Environments
+[Conda](https://docs.conda.io/en/latest/miniconda.html) environments used throughout our pipeline are provided in the "envs" directory.
 
 ## Authors
 
