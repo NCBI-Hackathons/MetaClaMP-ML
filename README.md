@@ -39,7 +39,7 @@ $ bash human2_pre_proc.sh .
 
 6. The above command will generate `humann2_submission.swarm`. Submit jobs using this swarm file using the command below. The parameters for memory use and thread-count can be modified appropriately for the cluster being used. 
 ```
-$ swarm -f humann2_submission.swarm -g 18 -t 56 --module humann2
+$ swarm -f humann2_submission.swarm -g 32 -t 16 --module humann2
 ```
 
 Your output will be each of the three Humann2 .tsv files in unique directories per input fasta. These are read into the ML algorithm.
