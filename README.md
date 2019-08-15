@@ -47,9 +47,11 @@ BioProjects within the Sequence Read Archive were selected for analysis based up
 
 ![ml_metrics](img/humann2_methods.png)
 
-Following the HUMAnN2 workflow, output files were normalized based on relative abundance followed by joining all sample tables to create a single table for gene families, path coverage, and path abundance. All three tables were mergedwpathcoverage, genefamilies, preprocessing custom script with R before going into SciKit-Learn
+Following the HUMAnN2 workflow, output files were normalized based on relative abundance followed by joining all sample tables to create a single table for gene families, path coverage, and path abundance. All three tables were preprocessed using a custom R script before being passed through a random forest classifier. We used the random forest algorithm implemented in scikit-learn (ref) for the binary classification. Owing to the low sample size with 18 healthy and 41 diseased samples (belonging to parkinson's disease, obesity etc.), we used leave-one out cross validation (LOOCV). 
 
 ## Results
+We used 100 trees in the random forest to select the features with the depth of 2 for pruning while classification. We calculated the useful performance metrics including precision, recall and F1-score along with the AUROC with the value of 0.86. 
+
 ![ml_metrics](img/ml_metrics.png)
 
 ![ml_metrics](img/ml_roc.png)
@@ -72,8 +74,15 @@ Additional options for the run script can be viewed by passing a "-h" flag:
 docker run humann2 run.py -h
 ```
 
-## Environments
+## Conda Environments
 [Conda](https://docs.conda.io/en/latest/miniconda.html) environments used throughout our pipeline are provided in the "envs" directory.
+
+## Future Directions
+
+Future work may include: 
+* Identification of top features responsible for the better classification.
+* Improvising the performance metrics.
+* Obtaining the independent data to validate our model.
 
 ## Authors
 
