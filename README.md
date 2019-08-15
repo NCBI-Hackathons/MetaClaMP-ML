@@ -8,7 +8,7 @@
 To identify unique metabolic functions in gut metagenomes for disease states such as Colorectal cancer, Diabetic, Obese, Parkinson's disease, and Ulcerative colitis populations.
 
 ## WORKFLOW
-![image](img/pipeline.tif)
+![image](img/pipeline.png)
 
 ## PIPELINE
 1. Retrieve SRA FASTQ files using NCBI SRA Toolkit (https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software)
