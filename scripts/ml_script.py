@@ -1,3 +1,4 @@
+import argparse
 import pandas as pd
 from sklearn.model_selection import LeaveOneOut
 from sklearn.svm import LinearSVC
@@ -7,7 +8,12 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import roc_auc_score
 from sklearn.feature_selection import SelectFromModel
 from sklearn.ensemble import ExtraTreesClassifier
-humann2=pd.read_csv("sample11.csv",index_col=0)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("input", help='input sample .tsv file for ML script', type=str)
+args = parser.parse_args()
+
+humann2=pd.read_csv(args.input, index_col=0, sep='\t')
 X = humann2[humann2.columns[2:]]
 y=humann2['flag']
 yy=y
@@ -22,6 +28,7 @@ print(X_new.shape)
 idxs_selected = model.get_support(indices=True)
 f = X.columns[idxs_selected]
 features_dataframe_new=X[f]
+print(features_dataframe_new.shape)
 f = open("actual_pred",'w')
 #############################
 from sklearn.model_selection import LeaveOneOut
@@ -38,7 +45,7 @@ for train_index, test_index in loo.split(features_dataframe_new):
 	#clf=SVC(kernel='linear',probability=True,class_weight="balanced")
 	clf = RandomForestClassifier(n_estimators=100, max_depth=2,random_state=0)
 	clf.fit(X_train, y_train.ravel())
-	y_pred11 = clf.predict(X_test) 
+	y_pred11 = clf.predict(X_test)
 	y_p_d=y_pred11.tolist()
 	final_pred_discrete.extend(y_p_d)
 	y_p_score=clf.predict_proba(X_test) ##### getting prob scores (coressponding to SVM score)
@@ -52,4 +59,3 @@ print(res,file=f)
 print(classification_report(final_actual, final_pred_discrete))
 print("AUROC")
 print(roc_auc_score(final_actual, final_pred))
-
