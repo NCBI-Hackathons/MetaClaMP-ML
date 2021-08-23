@@ -1,4 +1,8 @@
 # MetaClaMP-ML
+
+[![DOI](https://zenodo.org/badge/199518797.svg)](https://zenodo.org/badge/latestdoi/199518797)
+
+
 ### Metagenome Classification of Metabolic Profiles using Machine Learning
 <p align="center">
  <img width="360" src="img/logo.png" alt="nextflow_logo"/>
